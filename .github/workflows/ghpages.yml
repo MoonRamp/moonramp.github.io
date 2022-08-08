@@ -18,6 +18,6 @@ jobs:
         flutter build
     - uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ secrets.MOONRAMP_GITHUB_IO_DEPLOY_KEY }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
         publish_dir: ./build/web
