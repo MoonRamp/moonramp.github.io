@@ -10,14 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: subosito/flutter-action@v2
-      with:
-        channel: 'stable'
     - name: Build Website
       run: |
-        flutter build web
+        npm install
+        npm run build
     - uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: ./build/web
+        publish_dir: ./dist

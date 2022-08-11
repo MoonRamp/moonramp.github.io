@@ -1,0 +1,28 @@
+.grow {
+  transition: all .2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.shadow {
+  filter: drop-shadow(0.5em 0.5em 5px #707070);
+}
+
+.crypto-grid-circle {
+  height: 100%;
+  width: 100%;
+  min-width: 50px;
+  max-width: 256px; 
+}
+
+.blank {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity .2s ease-in-out;
+  opacity: 0;
+}
+.blank:hover {
+  opacity: 1;
+}
