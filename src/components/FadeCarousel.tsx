@@ -35,7 +35,7 @@ const FadeCarousel: Component = (props) => {
 
   setMaxChildren(props.children.length);
   return (
-    <Box sx={{opacity: opacity(), transition: `opacity ${duration}ms ease-out ${delay}ms`}}>
+    <Box minHeight='26em' sx={{opacity: opacity(), transition: `opacity ${duration}ms ease-out ${delay}ms`}}>
       <>{props.children[currentChild()]}</>
     </Box>
   );

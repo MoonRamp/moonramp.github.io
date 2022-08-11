@@ -12,9 +12,6 @@ const PreAlphaWarning: Component = () => {
     <Fade in={ active() }>
       <Alert
         severity='error'
-        action = {
-          <Button variant='outlined' color='error' onClick={ () => { setActive(false); }}>I understand</Button>
-        }
       >
         MoonRamp is pre-alpha and not ready for general adoption. Follow the GitHub project for updates.
       </Alert>

@@ -9,6 +9,7 @@ import IconButton from '@suid/material/IconButton';
 import Stack from '@suid/material/Stack';
 import Toolbar from '@suid/material/Toolbar';
 import Typography from '@suid/material/Typography';
+//import useMediaQuery from "@suid/material/useMediaQuery"; https://github.com/swordev/suid/issues/88
 
 import IcecreamIcon from '@suid/icons-material/Icecream';
 import LockIcon from '@suid/icons-material/Lock';
@@ -19,6 +20,7 @@ import Bounce from '../components/Bounce';
 import ComparisonTable from '../components/ComparisonTable';
 import CryptoGridCircle from '../components/CryptoGridCircle';
 import FadeCarousel from '../components/FadeCarousel';
+import GetHelpButton from '../components/GetHelpButton';
 import InfoCard from '../components/InfoCard';
 import MoonRampDocsSplash from '../components/MoonRampDocsSplash';
 import MoonRampHeroSplash from '../components/MoonRampHeroSplash';
@@ -30,7 +32,7 @@ import bitcoinBlankUrl from '../assets/crypto/bitcoin-blank-256.png';
 import bitcoinCashUrl from '../assets/crypto/bitcoin-cash-256.png';
 import bitcoinCashBlankUrl from '../assets/crypto/bitcoin-cash-blank-256.png';
 import ethereumUrl from '../assets/crypto/ethereum-256.png';
-import ethereumBlankUrl from '../assets/crypto/ethereum-256.png';
+import ethereumBlankUrl from '../assets/crypto/ethereum-blank-256.png';
 import ethereumClassicUrl from '../assets/crypto/ethereum-classic-256.png';
 import ethereumClassicBlankUrl from '../assets/crypto/ethereum-classic-blank-256.png';
 import moneroUrl from '../assets/crypto/monero-256.png';
@@ -39,7 +41,7 @@ import moneroBlankUrl from '../assets/crypto/monero-blank-256.png';
 const Home: Component = () => {
   return (
     <Box>
-      <Grid sx={{ padding: 6 }} container rowSpacing={10} columnSpacing={1}>
+      <Grid sx={{ padding: 6 }} container rowSpacing={8} columnSpacing={1}>
         <Grid item xs={12}>
           <PreAlphaWarning/>
         </Grid>
@@ -58,71 +60,71 @@ const Home: Component = () => {
 	  	</Stack>
         </Grid>
 
-        <Grid item xs={12} md={6} sx={{'min-height': '28em'}}>
+        <Grid item xs={12} md={6}>
 	    <Bounce>
-	    <FadeCarousel>
+	      <FadeCarousel>
             <QrCode data='https://moonramp.github.io?ticker=btc' image={bitcoinUrl} cornersSquareColor='#F99400'></QrCode>
             <QrCode data='https://moonramp.github.io?ticker=bch' image={bitcoinCashUrl} cornersSquareColor='#2FCF6E'></QrCode>
             <QrCode data='https://moonramp.github.io?ticker=xmr' image={moneroUrl} cornersSquareColor='#FF6600'></QrCode>
             <QrCode data='https://moonramp.github.io?ticker=eth' image={ethereumUrl} cornersSquareColor='#454A75'></QrCode>
             <QrCode data='https://moonramp.github.io?ticker=etc' image={ethereumClassicUrl} cornersSquareColor='#3AB83A'></QrCode>
-	    </FadeCarousel>
+	      </FadeCarousel>
 	    </Bounce>
         </Grid>
 
-        <Grid item xs={1}>
+        <Grid item xs='none' md={1}>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12} md={2}>
           <CryptoGridCircle
-	  	  image={bitcoinUrl}
-	  	  blankImage={bitcoinBlankUrl}
-	  	  ticker='BTC'
-	  	/>
+	  	    image={bitcoinUrl}
+	  	    blankImage={bitcoinBlankUrl}
+	  	    ticker='BTC'
+	  	  />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs='none' md={2}>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12} md={2}>
           <CryptoGridCircle 
-	      image={moneroUrl}
-	  	  blankImage={moneroBlankUrl}
-	  	  ticker='XMR'
-	  	/>
+	        image={moneroUrl}
+	  	    blankImage={moneroBlankUrl}
+	  	    ticker='XMR'
+	  	  />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs='none' md={2}>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12} md={2}>
           <CryptoGridCircle 
-	  	  image={bitcoinCashUrl}
-	  	  blankImage={bitcoinCashBlankUrl}
-	  	  ticker='BCH'
-	  	/>
+	  	    image={bitcoinCashUrl}
+	  	    blankImage={bitcoinCashBlankUrl}
+	  	    ticker='BCH'
+	  	  />
         </Grid>
-        <Grid item xs={1}>
+        <Grid item xs='none' md={1}>
         </Grid>
 
-        <Grid item xs={1}>
+        <Grid item xs='none' md={1}>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs='none' md={2}>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12} md={2}>
           <CryptoGridCircle 
             image={ethereumClassicUrl}
-	  	  blankImage={ethereumClassicBlankUrl}
-	  	  ticker='ETC'
-	  	/>
+	  	    blankImage={ethereumClassicBlankUrl}
+	  	    ticker='ETC'
+	  	  />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs='none' md={2}>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12} md={2}>
           <CryptoGridCircle 
-          image={ethereumUrl}
-	  	  blankImage={ethereumBlankUrl}
-	  	  ticker='ETH'
-	  	/>
+            image={ethereumUrl}
+	  	    blankImage={ethereumBlankUrl}
+	  	    ticker='ETH'
+	  	  />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs='none' md={2}>
         </Grid>
-        <Grid item xs={1}>
+        <Grid item xs='none' md={1}>
         </Grid>
 
         <Grid item xs={12}>
@@ -133,9 +135,9 @@ const Home: Component = () => {
 	            <Typography variant='h4' align='center'>Financial freedom</Typography>
 	          </Stack>
 	        </Box>
-	  	  <Container>
+	  	  <Box>
 	  	    <BenefitList/>
-	  	  </Container>
+	  	  </Box>
 	      </Stack>
         </Grid>
 
@@ -194,6 +196,7 @@ const Home: Component = () => {
         <Grid item xs={12} md={1}>
         </Grid>
       </Grid>
+	  <GetHelpButton/>
     </Box>
   );
 };

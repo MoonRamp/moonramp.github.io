@@ -6,12 +6,15 @@ import AppBar from '@suid/material/AppBar';
 import Box from '@suid/material/Box';
 import Button from '@suid/material/Button';
 import Container from '@suid/material/Container';
+import IconButton from '@suid/material/IconButton';
 import Stack from '@suid/material/Stack';
+import SvgIcon from '@suid/material/SvgIcon';
 import Toolbar from '@suid/material/Toolbar';
 import Typography from '@suid/material/Typography';
 
 import CryptoMatrix from '../components/CryptoMatrix';
-import GetHelpButton from '../components/GetHelpButton';
+
+import GitHubIcon from '../components/GitHub';
 
 const Default: Component = (props) => {
   return (
@@ -20,13 +23,14 @@ const Default: Component = (props) => {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position='static'>
           <Toolbar>
-            <Typography variant='h6' sx={{ flexGrow: 1 }}>
+            <Typography variant='h6' href='/' sx={{ flexGrow: 1 }}>
               <Button disableRipple color='inherit' href='/'>MoonRamp</Button>
             </Typography>
-            <Button color='inherit' href='/faq'>FAQ</Button>
-            <Button color='inherit' href='/doc'>Documentation</Button>
+            <Button color='inherit' href='/doc'>Docs</Button>
             <Button color='inherit' href='/api'>API</Button>
-            <Button color='inherit' href='https://github.com/MoonRamp/moonramp'>Github</Button>
+            <IconButton color='inherit' href='https://github.com/MoonRamp/moonramp'>
+              <GitHubIcon/>
+            </IconButton>
           </Toolbar>
         </AppBar>
 	    <>{props.children}</>
@@ -36,7 +40,6 @@ const Default: Component = (props) => {
           <Typography variant='h6' align='center' color='primary.contrastText'>Copyright {new Date().getFullYear()} MoonRamp Developers</Typography>
         </Stack>
       </Box>
-	  <GetHelpButton/>
     </Box>
   );
 };

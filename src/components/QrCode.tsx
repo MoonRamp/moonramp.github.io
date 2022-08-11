@@ -48,11 +48,11 @@ const QrCode: Component = (props) => {
   return (
     <Container>
       <Show when={!qrCode.loading}>
-        <Box width='350px' ml='auto' mr='auto'>
+        <Box width='100%' maxWidth='350px' ml='auto' mr='auto'>
 		  <Card sx={{ padding: 2 }}>
 		  <Stack alignItems='center' rowSpacing={2}>
-            <Box width='300px' ml='auto' mr='auto'>
-		      <img src={URL.createObjectURL(qrCode())}/>
+            <Box width='90%' maxWidth='300px' ml='auto' mr='auto'>
+		      <img width='100%' src={URL.createObjectURL(qrCode())}/>
 		    </Box>
 			<Typography variant='subtitle1' align='center'>Powered by MoonRamp</Typography>
 		  </Stack>

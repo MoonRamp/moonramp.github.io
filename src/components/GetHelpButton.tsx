@@ -4,16 +4,11 @@ import Box from '@suid/material/Box';
 import Card from '@suid/material/Card';
 import Fab from '@suid/material/Fab';
 import Modal from '@suid/material/Modal';
-import useTheme from '@suid/material/styles/useTheme';
+import Typography from '@suid/material/Typography';
 
 import HelpIcon from '@suid/icons-material/Help';
 
 const GetHelpButton: Component = () => {
-  const theme = useTheme();
-  const [open, setOpen] = createSignal(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <div>
       <Box
@@ -25,7 +20,7 @@ const GetHelpButton: Component = () => {
         <Fab
 		  color='secondary'
 		  aria-label='help'
-          onClick={handleOpen}
+          href='/faq'
 		>
           <HelpIcon fontSize='large'/>
         </Fab>
