@@ -1,4 +1,4 @@
-import { Component } from 'solid-js';
+import {Component} from 'solid-js';
 
 import Box from '@suid/material/Box';
 

@@ -1,4 +1,4 @@
-import { Component, onMount } from 'solid-js';
+import {Component, onMount} from 'solid-js';
 
 import Box from '@suid/material/Box';
 
@@ -30,16 +30,16 @@ class MatrixEffect {
     this.delay = 0;
     this.x = 0;
     this.y = 0;
-    this.children = []
-    this.maxChildren = 0
-    this.elapsed = 0
-    this.totalElapsed = 0
+    this.children = [];
+    this.maxChildren = 0;
+    this.elapsed = 0;
+    this.totalElapsed = 0;
   }
 
   randomize() {
     this.speed = 1000 / (200 + Math.random() * 100);
     this.delay = Math.random() * 1000;
-    this.x = Math.round((this.body.clientWidth / 32 * Math.random())) * 32;
+    this.x = Math.round((this.body.clientWidth / 32) * Math.random()) * 32;
     this.y = 0;
     this.children = [];
     this.maxChildren = 10 + Math.round(5 * Math.random());
@@ -50,19 +50,19 @@ class MatrixEffect {
       this.elapsed += delta;
     } else {
       this.y += 32;
-      if (this.y > this.body.clientHeight + (32 * this.maxChildren)) {
+      if (this.y > this.body.clientHeight + 32 * this.maxChildren) {
         for (const child of this.children) {
           app.stage.removeChild(child);
         }
         this.randomize();
       } else {
         const entries = Object.keys(textures);
-        const texture = textures[entries[Math.floor(Math.random()*entries.length)]];
+        const texture = textures[entries[Math.floor(Math.random() * entries.length)]];
         const newChild = new PIXI.Sprite(texture);
         newChild.x = this.x;
         newChild.y = this.y;
-        newChild.alpha = 0.20;
-        newChild.tint = 0xE93C0C;
+        newChild.alpha = 0.2;
+        newChild.tint = 0xe93c0c;
         app.stage.addChild(newChild);
         this.children.push(newChild);
         if (this.children.length > this.maxChildren) {
@@ -70,12 +70,12 @@ class MatrixEffect {
           app.stage.removeChild(child);
         }
       }
-      const step = 0.20 / this.children.length;
+      const step = 0.2 / this.children.length;
       let a = step;
       for (const child of this.children) {
         child.alpha = a;
         a += step;
-        if (child != this.children[this.children.length-1]) {
+        if (child != this.children[this.children.length - 1]) {
           child.tint = 0x000000;
         }
       }
@@ -89,7 +89,7 @@ const CryptoMatrix: Component = () => {
   onMount(async () => {
     const body = document.querySelector('body');
     const app = new PIXI.Application({
-      backgroundColor: 0xF8F7F1,
+      backgroundColor: 0xf8f7f1,
       autoDensity: true,
       width: body.clientWidth,
       height: body.clientHeight,
@@ -97,38 +97,37 @@ const CryptoMatrix: Component = () => {
     });
     const container = document.getElementById('crypto-matrix');
     container.appendChild(app.view);
-    
+
     const maxEffectCount = 10;
     const effects = [];
-    app
-    .loader
-    .add('bitcoin', bitcoinPngUrl)
-    .add('ethereum', ethereumPngUrl)
-    .add('monero', moneroPngUrl)
-    .load((loader, resources) => {
-      for (let i = 0; i < maxEffectCount; i++) {
-        const matrixEffect = new MatrixEffect(body);
-        matrixEffect.randomize();
-        effects.push(matrixEffect);
-      }
-
-      const textures = {
-        bitcoin: resources.bitcoin.texture,
-        ethereum: resources.ethereum.texture,
-        monero: resources.monero.texture
-      }
-    
-      app.ticker.add((delta) => {
-        for (const matrixEffect of effects) {
-          matrixEffect.update(app, textures, delta)
+    app.loader
+      .add('bitcoin', bitcoinPngUrl)
+      .add('ethereum', ethereumPngUrl)
+      .add('monero', moneroPngUrl)
+      .load((loader, resources) => {
+        for (let i = 0; i < maxEffectCount; i++) {
+          const matrixEffect = new MatrixEffect(body);
+          matrixEffect.randomize();
+          effects.push(matrixEffect);
         }
+
+        const textures = {
+          bitcoin: resources.bitcoin.texture,
+          ethereum: resources.ethereum.texture,
+          monero: resources.monero.texture,
+        };
+
+        app.ticker.add((delta) => {
+          for (const matrixEffect of effects) {
+            matrixEffect.update(app, textures, delta);
+          }
+        });
       });
-    });
   });
 
   return (
     <Box>
-      <div class='crypto-matrix' id='crypto-matrix'/>
+      <div class="crypto-matrix" id="crypto-matrix" />
     </Box>
   );
 };

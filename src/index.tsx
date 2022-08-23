@@ -1,13 +1,13 @@
 /* @refresh reload */
-import { render } from 'solid-js/web';
-import { Router } from "@solidjs/router";
+import {render} from 'solid-js/web';
+import {Router} from '@solidjs/router';
 
 import App from './App';
 
 render(() => {
   return (
     <Router>
-      <App/>
+      <App />
     </Router>
   );
 }, document.getElementById('root') as HTMLElement);
