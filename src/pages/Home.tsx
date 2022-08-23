@@ -52,10 +52,10 @@ const Home: Component = () => {
             </Box>
             <Container>
               <Stack direction="row" justifyContent="center" alignItems="center" spacing={10}>
-                <Button variant="contained" size="large">
+                <Button variant="contained" size="large" href="https://moonramp.github.io/book">
                   Get Started
                 </Button>
-                <Button variant="outlined" size="large">
+                <Button variant="outlined" size="large" href="https://github.com/moonramp/moonramp">
                   GitHub
                 </Button>
               </Stack>
