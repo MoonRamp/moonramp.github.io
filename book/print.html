@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>MoonRamp</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="forward.html">Forward</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Install Guide</li><li class="chapter-item expanded "><a href="install/info.html"><strong aria-hidden="true">1.</strong> Installation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="install/install_docker.html"><strong aria-hidden="true">1.1.</strong> Docker</a></li><li class="chapter-item expanded "><a href="install/install_bin.html"><strong aria-hidden="true">1.2.</strong> Binary</a></li><li class="chapter-item expanded "><a href="install/install_source.html"><strong aria-hidden="true">1.3.</strong> Source</a></li><li class="chapter-item expanded "><a href="install/install_cratesio.html"><strong aria-hidden="true">1.4.</strong> Crates.io</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="user/binaries.html"><strong aria-hidden="true">2.</strong> Binaries</a></li><li class="chapter-item expanded "><a href="user/setup.html"><strong aria-hidden="true">3.</strong> Setup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="user/setup/mkek.html"><strong aria-hidden="true">3.1.</strong> Master Key Encryption Key</a></li><li class="chapter-item expanded "><a href="user/setup/merchant.html"><strong aria-hidden="true">3.2.</strong> Master Merchant</a></li><li class="chapter-item expanded "><a href="user/setup/sqlite/db.html"><strong aria-hidden="true">3.3.</strong> Sqlite</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="user/setup/sqlite/moonramp.html"><strong aria-hidden="true">3.3.1.</strong> MoonRamp Setup (Sqlite)</a></li></ol></li><li class="chapter-item expanded "><a href="user/setup/postgres/db.html"><strong aria-hidden="true">3.4.</strong> Postgres</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="user/setup/postgres/moonramp.html"><strong aria-hidden="true">3.4.1.</strong> MoonRamp Setup (Postgres)</a></li></ol></li><li class="chapter-item expanded "><a href="user/setup/cockroachdb/db.html"><strong aria-hidden="true">3.5.</strong> CockroachDB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="user/setup/cockroachdb/moonramp.html"><strong aria-hidden="true">3.5.1.</strong> MoonRamp Setup (CockroachDB)</a></li></ol></li><li class="chapter-item expanded "><a href="user/setup/mysql/db.html"><strong aria-hidden="true">3.6.</strong> MySql</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="user/setup/mysql/moonramp.html"><strong aria-hidden="true">3.6.1.</strong> MoonRamp Setup (MySql)</a></li></ol></li><li class="chapter-item expanded "><a href="user/setup/moonrampctl.html"><strong aria-hidden="true">3.7.</strong> CLI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="user/setup/moonrampctl_program.html"><strong aria-hidden="true">3.7.1.</strong> Program CTL</a></li><li class="chapter-item expanded "><a href="user/setup/moonrampctl_wallet.html"><strong aria-hidden="true">3.7.2.</strong> Wallet CTL</a></li><li class="chapter-item expanded "><a href="user/setup/moonrampctl_sale.html"><strong aria-hidden="true">3.7.3.</strong> Sale CTL</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="user/programs.html"><strong aria-hidden="true">4.</strong> Programs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">MoonRamp</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div align="center">
+<img src="https://github.com/MoonRamp/moonramp/raw/master/moonramp_icon.png" width="50%">
+</div>
+<p>This guide documents how to run your own MoonRamp server.</p>
+<p>MoonRamp is a self-hosted crypto payment gateway that features a REST and JsonRPC API. It features a programable <a href="https://webassembly.org">WASM</a> runtime that can be used to run custom programs to process sales. Bitcoin (BTC), Bitcoin Cash (BCH), Monero (XMR), Ethereum (ETH), and Ethereum Classic +ERC-20 Tokens are supported.</p>
+<p>Moonramp is written in <a href="https://www.rust-lang.org">Rust</a> and is free and open source software.</p>
+<p><a href="https://moonramp.github.io/doc">Moonramp Rust Docs</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p><a href="https://github.com/MoonRamp/moonramp/actions/workflows/release.yml"><img src="https://github.com/MoonRamp/moonramp/actions/workflows/release.yml/badge.svg" alt="Release CI" /></a> <a href="https://github.com/moonramp/moonramp/releases"><img src="https://img.shields.io/github/v/release/moonramp/moonramp?label=Github" alt="Github Release" /></a> <a href="https://hub.docker.com/r/moonramp/moonramp"><img src="https://img.shields.io/docker/v/moonramp/moonramp?label=DockerHub" alt="Docker Image" /></a></p>
+<p>Please choose one of the following install options.</p>
+<h2 id="install-methods"><a class="header" href="#install-methods">Install Methods</a></h2>
+<ul>
+<li><a href="install/./install_bin.html">Binaries</a></li>
+<li><a href="install/./install_source.html">Compile from source</a></li>
+<li><a href="install/./install_cratesio.html">Crates.io</a></li>
+<li><a href="install/./install_docker.html">Docker image</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="docker"><a class="header" href="#docker">Docker</a></h1>
+<p><a href="https://hub.docker.com/r/moonramp/moonramp"><img src="https://img.shields.io/docker/v/moonramp/moonramp?label=DockerHub" alt="Docker Image" /></a></p>
+<p>A <a href="https://github.com/MoonRamp/moonramp/blob/master/Dockerfile">docker image</a> is built with every release that contains all MoonRamp bins and WASM programs.</p>
+<p>The <code>ENTRYPOINT</code> of the image is set to the <code>moonramp</code> bin and the <code>CMD</code> must be overrided by the user.</p>
+<p>Docker images run as a non-priviledged user <code>moonramp</code> and group <code>moonramp</code> with <code>uid:gid</code> <code>1337:1337</code>.</p>
+<p>The following ports are defined via <code>EXPOSE</code> - <code>9370</code>, <code>9371</code>, and <code>9372</code>.</p>
+<p>No other libaries or bins are included in the image. If you wish to build an image that includes other tooling you can use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multi-stage</a> build to copy the MoonRamp bins. The docker image is very lean at around 35 MB.</p>
+<p>For more information on docker see <a href="https://docs.docker.com/get-started/overview/">here</a>.</p>
+<h2 id="cli"><a class="header" href="#cli">CLI</a></h2>
+<pre><code>docker run moonramp/moonramp:0.1.18 help
+</code></pre>
+<h2 id="dockerfile"><a class="header" href="#dockerfile">DockerFile</a></h2>
+<pre><code>FROM moonramp/moonramp:0.1.18
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="binary"><a class="header" href="#binary">Binary</a></h1>
+<p><a href="https://github.com/moonramp/moonramp/releases"><img src="https://img.shields.io/github/v/release/moonramp/moonramp?label=Github" alt="Github Release" /></a></p>
+<p>Pre-compiled binaries are provided as <a href="https://github.com/moonramp/moonramp/releases">Github Releases</a></p>
+<p>Each release tag is signed and the download includes both bins and WASM programs.</p>
+<pre><code>curl https://github.com/MoonRamp/moonramp/releases/download/0.1.18/moonramp.tar.gz
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="source"><a class="header" href="#source">Source</a></h1>
+<p>To install from source</p>
+<h2 id="step-1---rust"><a class="header" href="#step-1---rust">Step 1 - Rust</a></h2>
+<p><a href="https://www.rust-lang.org/tools/install">Install Rust</a></p>
+<pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<h2 id="step-2---get-the-source"><a class="header" href="#step-2---get-the-source">Step 2 - Get the source</a></h2>
+<h3 id="2a---moonramp"><a class="header" href="#2a---moonramp">2a - MoonRamp</a></h3>
+<pre><code>git clone git@github.com:MoonRamp/moonramp.git
+</code></pre>
+<h3 id="2b---required-libaries"><a class="header" href="#2b---required-libaries">2b - Required libaries</a></h3>
+<p>Please install <code>sqlite-dev</code> and <code>mysql-dev</code> packages from your systems package manager. MoonRamp uses <a href="https://github.com/rustls/rustls">rust-tls</a> and as such openssl is not needed.</p>
+<h2 id="step-3---build-bins"><a class="header" href="#step-3---build-bins">Step 3 - Build bins</a></h2>
+<pre><code>cd moonramp &amp;&amp; cargo build --release
+</code></pre>
+<h2 id="step-4---build-wasm-programs"><a class="header" href="#step-4---build-wasm-programs">Step 4 - Build WASM programs</a></h2>
+<pre><code>cargo --manifest-path=programs/default-sale/Cargo.toml build --release --target=wasm32-wasi
+</code></pre>
+<h3 id="notes"><a class="header" href="#notes">Notes</a></h3>
+<p>MacOS DOES NOT ship with a WASM supported version of clang. Please install clang via homebrew and set <code>CC</code> and <code>AR</code> env vars. For example</p>
+<pre><code>PATH=&quot;/usr/local/opt/llvm/bin:${PATH}&quot; CC=/usr/local/opt/llvm/bin/clang AR=/usr/local/opt/llvm/bin/llvm-ar cargo [COMMAND]
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cratesio"><a class="header" href="#cratesio">Crates.io</a></h1>
+<p><a href="https://crates.io/crates/moonramp"><img src="https://img.shields.io/crates/v/moonramp" alt="MoonRamp" /></a></p>
+<p>MoonRamp is published to <a href="https://crates.io/moonramp">Crates.io</a> with every version release.</p>
+<h2 id="cli-1"><a class="header" href="#cli-1">CLI</a></h2>
+<pre><code>cargo install moonramp
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="binaries"><a class="header" href="#binaries">Binaries</a></h1>
+<h2 id="moonramp"><a class="header" href="#moonramp">moonramp</a></h2>
+<p><i>Crypto payment gateway that can process BTC, BCH, XRM, ETH, and ETC payments. Exposes a REST and JsonRpc 2.0 API. Support for SQL based data stores.</i></p>
+<h2 id="moonrampctl"><a class="header" href="#moonrampctl">moonrampctl</a></h2>
+<p><i>CLI interface for remote JsonRpc API calls to a moonramp server</i></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setup"><a class="header" href="#setup">Setup</a></h1>
+<p>MoonRamp requires minimal setup and is a stateless application utilizing SQL based backends for storage.</p>
+<p>The following guides will show what is required to run MoonRamp.</p>
+<ul>
+<li><a href="user/./setup/mkek.html">Master Key Encryption Key</a></li>
+<li><a href="user/./setup/merchant.html">Master Merchant</a></li>
+<li><a href="user/./setup/sqlite/db.html">Sqlite</a>
+<ul>
+<li><a href="user/./setup/sqlite/moonramp.html">Server</a></li>
+<li><a href="user/./setup/sqlite/moonrampctl.html">CLI</a></li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="master-key-encryption-key"><a class="header" href="#master-key-encryption-key">Master Key Encryption Key</a></h1>
+<p>MoonRamp uses a key encryption key scheme to uniquely encrypt all records independently of the underlying data store. The <code>Master Key Encryption Key</code> is a 256 bit key used to protect all data MoonRamp manages.</p>
+<p>When the program boots it will use the provided <code>Master Key Encryption Key</code> to create or decrypt the current <code>Key Encryption Key</code>.
+The <code>Master Key Encryption Key</code> will be purged from memory and the <code>Key Encryption Key</code> held in memory to decrypt <code>Encryption Key</code> records that are inturn used to decrypt specific record data.</p>
+<p>This means that all data is secured via the <code>Master Key Encryption Key</code>. As such if this key is lost <b>ALL DATA</b> will be lost! To repeat this any hot wallets managed by the system will be <b>UNRECOVERABLE</b> if the <code>Master Key Encryption Key</code> is lost.</p>
+<p>MoonRamp uses <a href="https://github.com/RustCrypto">Rust Crypto</a>.</p>
+<h2 id="rotating-the-master-key-encryption-key"><a class="header" href="#rotating-the-master-key-encryption-key">Rotating the Master Key Encryption Key</a></h2>
+<p>TODO<sup class="footnote-reference"><a href="#mkek_rotation">1</a></sup></p>
+<h2 id="rotating-the-key-encryption-key"><a class="header" href="#rotating-the-key-encryption-key">Rotating the Key Encryption Key</a></h2>
+<p>TODO<sup class="footnote-reference"><a href="#kek_rotation">2</a></sup></p>
+<h2 id="shamir-secret-sharing"><a class="header" href="#shamir-secret-sharing">Shamir Secret Sharing</a></h2>
+<p>TODO<sup class="footnote-reference"><a href="#shamir">3</a></sup></p>
+<h2 id="encryption-stack"><a class="header" href="#encryption-stack">Encryption Stack</a></h2>
+<p>MoonRamp recommends a holistic approach to securing your data.</p>
+<p>For the most security Merchants should:</p>
+<ul>
+<li>Maintain network firewall configurations to minimize network traffic to host running your data store and MoonRamp</li>
+<li>Run MoonRamp as a non-root user</li>
+<li>Run your data store on seperate hosts as a non-root user</li>
+<li>Enable full disk encryption for both your data store and MoonRamp hosts</li>
+<li>Enable transparent encryption for your data store</li>
+<li>Run all network traffic with TLS</li>
+<li>Utilize cold wallet support for high risk scenarios</li>
+</ul>
+<div class="footnote-definition" id="mkek_rotation"><sup class="footnote-definition-label">1</sup>
+<p>MoonRamp will support <code>Master Key Encryption Key</code> rotation</p>
+</div>
+<div class="footnote-definition" id="kek_rotation"><sup class="footnote-definition-label">2</sup>
+<p>MoonRamp will support <code>Key Encryption Key</code> rotation</p>
+</div>
+<div class="footnote-definition" id="shamir"><sup class="footnote-definition-label">3</sup>
+<p>MoonRamp will support Shamir secret sharing to constitute a <code>Master Key Encryption Key</code> from multiple key shares</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="master-merchant"><a class="header" href="#master-merchant">Master Merchant</a></h1>
+<p>MoonRamp is a multi-tenate system that supports any number of merchant accounts. Data and permissions are scoped to merchants. The general exception to this rule is the <code>Master Merchant</code> which has an elevated role in the system. The primary value the <code>Master Merchant</code> provides are setting the default programs and creating other merchants.</p>
+<p>The next sections of the guide will go through running MoonRamp with each of the support data stores.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sqlite"><a class="header" href="#sqlite">Sqlite</a></h1>
+<h2 id="run-a-bitcoin-node-in-regtest-mode"><a class="header" href="#run-a-bitcoin-node-in-regtest-mode">Run a bitcoin node in regtest mode</a></h2>
+<pre><code>docker run --rm --name bitcoin -d moonramp/bitcoin:0.1.3-v23 -regtest
+</code></pre>
+<h2 id="setup-the-sqlite-db-file"><a class="header" href="#setup-the-sqlite-db-file">Setup the Sqlite DB File</a></h2>
+<p>Create a docker volume and set the correct file permissions</p>
+<pre><code>docker volume create moonramp
+</code></pre>
+<pre><code>docker run --rm -v moonramp:/db busybox /bin/sh -c 'touch /db/moonramp.db &amp;&amp; chown -R 1337:1337 /db'
+</code></pre>
+<p>Run the migrations to setup the db</p>
+<pre><code>docker run -v moonramp:/home/moonramp/db --entrypoint=moonramp-migration moonramp/moonramp:0.1.18 -u &quot;sqlite://db/moonramp.db&quot; migrate
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="server-setup-sqlite"><a class="header" href="#server-setup-sqlite">Server Setup (Sqlite)</a></h1>
+<h2 id="create-the-master-merchant"><a class="header" href="#create-the-master-merchant">Create the Master Merchant</a></h2>
+<p>The following command will generate a new merchant entry with the provide metadata and return a json blob.</p>
+<pre><code>docker run -v moonramp:/home/moonramp/db --entrypoint=moonramp-migration moonramp/moonramp:0.1.18 -u &quot;sqlite://db/moonramp.db&quot; create-merchant -n &quot;My Merchant&quot; -a &quot;An Address&quot; -e &quot;email@example.com&quot; -p &quot;12223334444&quot;
+</code></pre>
+<p>To run the next set of commands we need to come up with a secure <a href="user/setup/sqlite/../mkek.html">Master Key Encryption Key</a>. We recommend at least a 32 character random password. For our example we will use: <code>an example very very secret key.</code></p>
+<p>Using the <code>hash</code> from the <code>create-merchant</code> command replace <code>MERCHANT_HASH</code> and with your password replace <code>MKEK</code> in the following command to issue an API token for the master merchant. This API token has complete access to the merchant master account.</p>
+<pre><code>docker run -v moonramp:/home/moonramp/db --entrypoint=moonramp-migration moonramp/moonramp:0.1.18 -u &quot;sqlite://db/moonramp.db&quot; create-api-token -m MERCHANT_HASH -M MKEK
+</code></pre>
+<p>The api token record will be in the <code>token</code> field and the <code>Bearer Auth</code> string will be in the <code>api_credential</code> field of the json blob returned. The secret that is generated and encoded into the <code>api_credential</code> field is not stored in the database and if lost you will need to regenerate a new token.</p>
+<h2 id="run-the-server"><a class="header" href="#run-the-server">Run the Server</a></h2>
+<pre><code>docker run --rm --name moonramp --link bitcoin -v moonramp:/home/moonramp/db -d moonramp/moonramp:0.1.18 node -u &quot;sqlite://db/moonramp.db&quot; -n example-node-id -m MERCHANT_HASH -M MKEK -N regtest
+</code></pre>
+<h2 id="verify-servers"><a class="header" href="#verify-servers">Verify Servers</a></h2>
+<pre><code>docker ps
+</code></pre>
+<p>You should see two docker containers running (<code>bitcoin</code>, <code>moonramp</code>). The output should look like the following.</p>
+<pre><code>CONTAINER ID   IMAGE                        COMMAND                  CREATED         STATUS         PORTS                                                      NAMES
+4bd611af09c6   moonramp/moonramp:0.1.18     &quot;moonramp node -u sq…&quot;   2 minutes ago   Up 2 minutes                                                              moonramp
+633e8855d98d   moonramp/bitcoin:0.1.3-v23   &quot;bitcoind -regtest&quot;      2 minutes ago   Up 2 minutes   8332/tcp, 18332/tcp, 18443/tcp, 38332/tcp                  bitcoin
+</code></pre>
+<p>Congrats! You now have a MoonRamp server running using sqlite as a data store and connected to a bitcoin node in regtest mode.</p>
+<p>Continue to the <a href="user/setup/sqlite/../moonrampctl.html">CLI Section</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="postgres"><a class="header" href="#postgres">Postgres</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="moonramp-setup-postgres"><a class="header" href="#moonramp-setup-postgres">MoonRamp Setup (Postgres)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cockroachdb"><a class="header" href="#cockroachdb">CockroachDB</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="moonramp-setup-cockroachdb"><a class="header" href="#moonramp-setup-cockroachdb">MoonRamp Setup (CockroachDB)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mysql"><a class="header" href="#mysql">MySql</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="moonramp-setup-mysql"><a class="header" href="#moonramp-setup-mysql">MoonRamp Setup (MySql)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="moonrampctl-1"><a class="header" href="#moonrampctl-1">Moonrampctl</a></h1>
+<h2 id="validate-moonramp"><a class="header" href="#validate-moonramp">Validate Moonramp</a></h2>
+<p><code>API_TOKEN</code> is the <code>api_credential</code> field returned from the json blob output of the <code>moonramp-migration create-api-token</code> command run during your desired database setup (<a href="user/setup/./sqlite/db.html">Sqlite</a>, <a href="user/setup/./postgres/db.html">Postgres</a>, <a href="user/setup/./cockroachdb/db.html">CockroachDB</a>, <a href="user/setup/./mysql/db.html">MySql</a>).</p>
+<pre><code>docker exec moonramp moonrampctl -a API_TOKEN program version
+</code></pre>
+<p>You should see something like</p>
+<pre><code>{
+  &quot;id&quot;: &quot;69e78dd9e523458d92a889fa39ff0b82&quot;,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: &quot;0.1.18&quot;
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="moonrampctl-program"><a class="header" href="#moonrampctl-program">Moonrampctl (Program)</a></h1>
+<h2 id="configure-the-default-sale-program"><a class="header" href="#configure-the-default-sale-program">Configure the Default Sale Program</a></h2>
+<pre><code>docker exec moonramp moonrampctl -a API_TOKEN program create -n moonramp-program-default-sale -P /home/moonramp/moonramp_program_default_sale.wasm -v test
+</code></pre>
+<p>You should see a result like</p>
+<pre><code>{
+  &quot;id&quot;: &quot;a7e2344df06a4636a9bc8d09ba3346ce&quot;,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;createdAt&quot;: &quot;2022-08-03T00:15:23.787162657Z&quot;,
+    &quot;description&quot;: null,
+    &quot;hash&quot;: &quot;2CkZM8YwroAXMTCFjWdSW3t4FpK2TBArgfRz9KouR8z6&quot;,
+    &quot;name&quot;: &quot;moonramp-default-sale-program&quot;,
+    &quot;private&quot;: true,
+    &quot;revision&quot;: 0,
+    &quot;url&quot;: null,
+    &quot;version&quot;: &quot;test&quot;
+  }
+}
+</code></pre>
+<p>The program is processed and then stored encrypted in the datastore ready for invocation. We are now ready to start storing wallets and processing crypto payments. For more information about programs capabilites see the <a href="user/setup/../../programs.html">Programs</a> section of this guide.</p>
+<p>To get more info from <code>moonrampctl</code> on programs run the following.</p>
+<pre><code>docker exec moonramp moonrampctl help program
+</code></pre>
+<p>To get more info on any program subcommand run the following.</p>
+<pre><code>docker exec moonramp moonrampctl help program SUBCOMMAND
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="moonrampctl-wallet"><a class="header" href="#moonrampctl-wallet">Moonrampctl (Wallet)</a></h1>
+<p>MoonRamp supports both hot and cold wallets. By default all BTC and BCH wallets support <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32 HD Wallets</a>. For XMR <a href="https://www.getmonero.org/resources/user-guides/view_only.html">view-only</a> wallets are supported. ETH and ETC wallets support <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20 Tokens</a>.</p>
+<p>Let's create a new BTC wallet to accept payment from a customer.</p>
+<pre><code>docker exec moonramp moonrampctl -a API_TOKEN wallet create -w hot -t btc
+</code></pre>
+<p>You should see something like</p>
+<pre><code>{
+  &quot;id&quot;: &quot;7edc7b3b369e44598e0c5a0497aed044&quot;,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;createdAt&quot;: &quot;2022-08-03T15:58:29.890989554Z&quot;,
+    &quot;hash&quot;: &quot;2kg8XtHv1t5e5soBBFTGehn32sUwuqDmzyJjBtCg5K6q&quot;,
+    &quot;network&quot;: &quot;Regtest&quot;,
+    &quot;pubkey&quot;: &quot;tpubD6NzVbkrYhZ4WgTtjp7GR15TdZ35AUBAuxi8rxYTNTsLGf3j9AGYZrjwbLH5xDsJr3RE4vXxFK44fkRyA3UUBGRRDhYfagAu3vsntG9DTAb&quot;,
+    &quot;ticker&quot;: &quot;BTC&quot;,
+    &quot;walletType&quot;: &quot;Hot&quot;
+  }
+}
+</code></pre>
+<p>Great job taking financial independence! We now have a MoonRamp managed BTC wallet to accept payments. As mentioned in the <a href="user/setup/./../mkek.html">Master Key Encryption Key</a> section this wallets <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">mnemoic code</a> is stored with several layers of encryption. Mnemic codes are exportable and only the operator of the MoonRamp server has access to this information.</p>
+<h2 id="impl-details"><a class="header" href="#impl-details">Impl Details</a></h2>
+<h3 id="bitcoin"><a class="header" href="#bitcoin">Bitcoin</a></h3>
+<p>MoonRamp uses the following libaries for bitcoin and bitcoin cash support</p>
+<ul>
+<li><a href="https://github.com/rust-bitcoin/rust-bitcoin">Rust Bitcoin</a></li>
+<li><a href="https://github.com/rust-bitcoin/rust-bip39">Rust BIP39</a></li>
+<li><a href="https://github.com/rust-bitcoin/rust-bitcoincore-rpc">Rust RPC</a></li>
+</ul>
+<h3 id="monero"><a class="header" href="#monero">Monero</a></h3>
+<p>TODO</p>
+<h3 id="ethereum"><a class="header" href="#ethereum">Ethereum</a></h3>
+<p>TODO</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="moonrampctl-sale"><a class="header" href="#moonrampctl-sale">Moonrampctl (Sale)</a></h1>
+<p>Now it's time to create an invoice and get paid! <code>WALLET_HASH</code> is the <code>hash</code> field returned from the json blob of the <code>moonrampctl wallet create</code> command in the previous section.</p>
+<pre><code>docker exec moonramp moonrampctl -a API_TOKEN sale invoice -H WALLET_HASH -c btc  -a 0.25
+</code></pre>
+<p>You should see something like</p>
+<pre><code>{
+  &quot;id&quot;: &quot;c8ad22f454764bd7807c967353034d27&quot;,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;address&quot;: &quot;bcrt1qhe8apwuv2dsr95yknu826qad3cdxvs323ygc80&quot;,
+    &quot;amount&quot;: 0.25,
+    &quot;createdAt&quot;: &quot;2022-08-03T20:49:52.483993Z&quot;,
+    &quot;currency&quot;: &quot;BTC&quot;,
+    &quot;expiresAt&quot;: &quot;2022-08-03T21:04:52.483994Z&quot;,
+    &quot;hash&quot;: &quot;HhfxubuY8e36GQNhQVBMuEzTWMZcpfA7nzC12REuNf7e&quot;,
+    &quot;invoiceStatus&quot;: &quot;Pending&quot;,
+    &quot;network&quot;: &quot;Regtest&quot;,
+    &quot;pubkey&quot;: &quot;tpubDCPc8xDGjqgqgW63nqsFiSTsJR8RRBjV4Npb5j3fMfu3Y9uTXB8AmbQpYKLNQGpGeJHmn6VYNHFoGpu76GT3JfabcJyaidsKNG2yq2PwvMH&quot;,
+    &quot;ticker&quot;: &quot;BTC&quot;,
+    &quot;updatedAt&quot;: &quot;2022-08-03T20:49:52.483994Z&quot;,
+    &quot;uri&quot;: &quot;bitcoin:bcrt1qhe8apwuv2dsr95yknu826qad3cdxvs323ygc80;version=1.0&amp;amount=0.25&quot;,
+    &quot;userData&quot;: null,
+    &quot;walletHash&quot;: &quot;BvY3SinZbHkbnG1azbR8NcxzX88kVyc8TDzNxYa9TKbB&quot;
+  }
+}
+</code></pre>
+<p>You have just created an invoice that expects payment of <code>0.25 Btc</code> to the wallet <code>BvY3SinZbHkbnG1azbR8NcxzX88kVyc8TDzNxYa9TKbB</code> at the address <code>bcrt1qhe8apwuv2dsr95yknu826qad3cdxvs323ygc80</code> within <code>15 minutes</code>.</p>
+<p>The fields <code>address</code> and <code>uri</code> are of particular note. <code>address</code> is a unique one-time address to receive payment. For Bitcoin each call to generate a new invoice will generate a new address for a given wallet. The <code>uri</code> field is data that can be handle by a mobile OS url handler (<a href="https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app">iOS</a>, <a href="https://developer.android.com/training/app-links/deep-linking">Android</a>). Most wallets support these type of uris when scanned as a QR code.</p>
+<h2 id="details-about-moonramps-modeling"><a class="header" href="#details-about-moonramps-modeling">Details About MoonRamp's Modeling</a></h2>
+<p>MoonRamp models payments as four objects.</p>
+<p>An <code>Invoice</code>, <code>Sale</code>, <code>Refund</code>, and <code>Credit</code>.</p>
+<h3 id="invoice"><a class="header" href="#invoice">Invoice</a></h3>
+<p>An <code>Invoice</code> is a request to receive payment within a specific window of time for a specific amount to a specific address.</p>
+<p><i>Example: A merchant has a good or service they wish to collect payment on.</i></p>
+<h3 id="sale"><a class="header" href="#sale">Sale</a></h3>
+<p>A <code>Sale</code> is &quot;capture&quot; of an invoice that has been sucessfuly funded in full.</p>
+<p><i>Example: A customer has fully funded an invoice and expects a good or service in return.</i></p>
+<h3 id="refund"><a class="header" href="#refund">Refund</a></h3>
+<p>A <code>Refund</code> is a partial or full repayment of a specifc <code>Sale</code> to a specific address.</p>
+<p><i>Example: A customer wishes to return a good in exchange for their original payment.</i></p>
+<h3 id="credit"><a class="header" href="#credit">Credit</a></h3>
+<p>A <code>Credit</code> is a repayment for a specific <code>Invoice</code> that was only partially funded to a specific address.</p>
+<p><i>Example: A customer only partially funded an invoice and should have their funds sent back.</i></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="programs"><a class="header" href="#programs">Programs</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
