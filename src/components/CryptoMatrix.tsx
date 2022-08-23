@@ -51,14 +51,14 @@ class MatrixEffect {
     } else {
       this.y += 32;
       if (this.y > this.body.clientHeight + (32 * this.maxChildren)) {
-        for (let child of this.children) {
+        for (const child of this.children) {
           app.stage.removeChild(child);
         }
         this.randomize();
       } else {
         const entries = Object.keys(textures);
         const texture = textures[entries[Math.floor(Math.random()*entries.length)]];
-        let newChild = new PIXI.Sprite(texture);
+        const newChild = new PIXI.Sprite(texture);
         newChild.x = this.x;
         newChild.y = this.y;
         newChild.alpha = 0.20;
@@ -72,7 +72,7 @@ class MatrixEffect {
       }
       const step = 0.20 / this.children.length;
       let a = step;
-      for (let child of this.children) {
+      for (const child of this.children) {
         child.alpha = a;
         a += step;
         if (child != this.children[this.children.length-1]) {
@@ -85,7 +85,7 @@ class MatrixEffect {
   }
 }
 
-const CryptoMatrix: Component = (props) => {
+const CryptoMatrix: Component = () => {
   onMount(async () => {
     const body = document.querySelector('body');
     const app = new PIXI.Application({
@@ -95,11 +95,11 @@ const CryptoMatrix: Component = (props) => {
       height: body.clientHeight,
       resizeTo: body,
     });
-    let container = document.getElementById('crypto-matrix');
+    const container = document.getElementById('crypto-matrix');
     container.appendChild(app.view);
     
     const maxEffectCount = 10;
-    let effects = [];
+    const effects = [];
     app
     .loader
     .add('bitcoin', bitcoinPngUrl)
@@ -107,7 +107,7 @@ const CryptoMatrix: Component = (props) => {
     .add('monero', moneroPngUrl)
     .load((loader, resources) => {
       for (let i = 0; i < maxEffectCount; i++) {
-        let matrixEffect = new MatrixEffect(body);
+        const matrixEffect = new MatrixEffect(body);
         matrixEffect.randomize();
         effects.push(matrixEffect);
       }
@@ -119,7 +119,7 @@ const CryptoMatrix: Component = (props) => {
       }
     
       app.ticker.add((delta) => {
-        for (let matrixEffect of effects) {
+        for (const matrixEffect of effects) {
           matrixEffect.update(app, textures, delta)
         }
       });

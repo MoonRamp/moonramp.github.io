@@ -2,12 +2,9 @@ import { Component } from 'solid-js';
 
 import Box from '@suid/material/Box';
 import Button from '@suid/material/Button';
-import Card from '@suid/material/Card';
 import Container from '@suid/material/Container';
 import Grid from '@suid/material/Grid';
-import IconButton from '@suid/material/IconButton';
 import Stack from '@suid/material/Stack';
-import Toolbar from '@suid/material/Toolbar';
 import Typography from '@suid/material/Typography';
 //import useMediaQuery from "@suid/material/useMediaQuery"; https://github.com/swordev/suid/issues/88
 
@@ -186,7 +183,7 @@ const Home: Component = () => {
             <Typography variant='h3'>Explore the docs</Typography>
             <Typography variant='subtitle1'>Learn about how to deploy MoonRamp and the integrate with the API</Typography>
 	  	    <Stack direction='row' justifyContent='center' alignItems='center' spacing={10}>
-              <Button variant='outlined' size='large' href='/doc'>Docs</Button>
+              <Button variant='outlined' size='large' href='https://moonramp.github.io/book'>Docs</Button>
             </Stack>
           </Stack>
         </Grid>

@@ -1,14 +1,10 @@
 import type { Component } from 'solid-js';
 
-import { createTheme, ThemeProvider } from '@suid/material/styles';
-
 import AppBar from '@suid/material/AppBar';
 import Box from '@suid/material/Box';
 import Button from '@suid/material/Button';
-import Container from '@suid/material/Container';
 import IconButton from '@suid/material/IconButton';
 import Stack from '@suid/material/Stack';
-import SvgIcon from '@suid/material/SvgIcon';
 import Toolbar from '@suid/material/Toolbar';
 import Typography from '@suid/material/Typography';
 
@@ -26,8 +22,8 @@ const Default: Component = (props) => {
             <Typography variant='h6' href='/' sx={{ flexGrow: 1 }}>
               <Button disableRipple color='inherit' href='/'>MoonRamp</Button>
             </Typography>
-            <Button color='inherit' href='/doc'>Docs</Button>
-            <Button color='inherit' href='/api'>API</Button>
+            <Button color='inherit' href='https://moonramp.github.io/book'>Docs</Button>
+            <Button color='inherit' href='https://docs.rs/moonramp/latest'>API</Button>
             <IconButton color='inherit' href='https://github.com/MoonRamp/moonramp'>
               <GitHubIcon/>
             </IconButton>

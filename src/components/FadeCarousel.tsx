@@ -1,10 +1,6 @@
-import { Component, createSignal, children, onMount } from 'solid-js';
+import { Component, createSignal, onMount } from 'solid-js';
 
-import Alert from '@suid/material/Alert';
-import Button from '@suid/material/Button';
 import Box from '@suid/material/Box';
-import Container from '@suid/material/Container';
-import Fade from '@suid/material/Fade';
 
 const duration = 5000;
 const delay = 0;
@@ -29,8 +25,8 @@ setInterval(() => {
 
 const FadeCarousel: Component = (props) => {
 
-  // TODO
   onMount(async () => {
+    // TODO
   });
 
   setMaxChildren(props.children.length);

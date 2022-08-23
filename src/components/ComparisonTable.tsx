@@ -1,7 +1,5 @@
 import { Component, mapArray } from 'solid-js';
 
-import Box from '@suid/material/Box';
-import Card from '@suid/material/Card';
 import Paper from '@suid/material/Paper';
 import Table from "@suid/material/Table";
 import TableBody from "@suid/material/TableBody";
@@ -31,7 +29,7 @@ const rows = [
   createRow("Coinbase", ReportProblemIcon, ReportProblemIcon, ReportProblemIcon, '1%'),
 ];
 
-const ComparisonTable: Component = (props) => {
+const ComparisonTable: Component = () => {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 600 }} aria-label="simple table">

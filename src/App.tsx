@@ -6,8 +6,6 @@ import { createTheme, ThemeProvider } from '@suid/material/styles';
 import Default from './layouts/Default';
 import Home from './pages/Home';
 import Faq from './pages/Faq';
-import Doc from './pages/Doc';
-import Api from './pages/Api';
 
 const theme = createTheme({
   palette: {
@@ -43,8 +41,6 @@ const App: Component = () => {
         <Routes>
           <Route path="/" component={Home} />
           <Route path="/faq" component={Faq} />
-          <Route path="/doc" component={Doc} />
-          <Route path="/api" component={Api} />
         </Routes>
 	  </Default>
     </ThemeProvider>

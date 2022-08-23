@@ -14,6 +14,12 @@ jobs:
       run: |
         npm install
         npm run build
+    - name: Build MoonRamp Book
+      run: |
+        cargo install mdbook
+        git clone https://github.com/moonramp/moonramp.git
+        mdbook build moonramp/book
+        cp -r moonramp/book/book ./dist/book
     - uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

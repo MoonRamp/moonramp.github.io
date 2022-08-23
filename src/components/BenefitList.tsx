@@ -2,19 +2,17 @@ import { Component } from 'solid-js';
 
 import Box from '@suid/material/Box';
 import Card from '@suid/material/Card';
-import Container from '@suid/material/Container';
 import Divider from '@suid/material/Divider';
 import List from '@suid/material/List';
 import ListItem from '@suid/material/ListItem';
 import ListItemIcon from '@suid/material/ListItemIcon';
 import ListItemText from '@suid/material/ListItemText';
-import Typography from '@suid/material/Typography';
 
 import CheckIcon from '@suid/icons-material/Check';
 
 import './BenefitList.css';
 
-const BenefitList: Component = (props) => {
+const BenefitList: Component = () => {
   return (
     <Box width='350px' ml='auto' mr='auto'>
     <div class='grow'>

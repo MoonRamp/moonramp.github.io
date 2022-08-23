@@ -1,7 +1,6 @@
 import { Component } from 'solid-js';
 
 import Box from '@suid/material/Box';
-import Card from '@suid/material/Card';
 
 import './Bounce.css';
 

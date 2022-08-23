@@ -6,7 +6,7 @@ import './MoonRampHeroSplash.css';
 
 import splashUrl from '../assets/moonramp_icon.png';
 
-const MoonRampHeroSplash: Component = (props) => {
+const MoonRampHeroSplash: Component = () => {
   return (
     <Box align='center'>
       <img class='moonramp-splash' src={splashUrl}/>
