@@ -52,10 +52,20 @@ const Home: Component = () => {
             </Box>
             <Container>
               <Stack direction="row" justifyContent="center" alignItems="center" spacing={10}>
-                <Button variant="contained" size="large" href="https://moonramp.github.io/book">
+                <Button
+                  variant="contained"
+                  size="large"
+                  href="https://moonramp.github.io/book"
+                  target="_blank"
+                >
                   Get Started
                 </Button>
-                <Button variant="outlined" size="large" href="https://github.com/moonramp/moonramp">
+                <Button
+                  variant="outlined"
+                  size="large"
+                  href="https://github.com/moonramp/moonramp"
+                  target="_blank"
+                >
                   GitHub
                 </Button>
               </Stack>
@@ -185,7 +195,12 @@ const Home: Component = () => {
               Learn about how to deploy MoonRamp and the integrate with the API
             </Typography>
             <Stack direction="row" justifyContent="center" alignItems="center" spacing={10}>
-              <Button variant="outlined" size="large" href="https://moonramp.github.io/book">
+              <Button
+                variant="outlined"
+                size="large"
+                href="https://moonramp.github.io/book"
+                target="_blank"
+              >
                 Docs
               </Button>
             </Stack>

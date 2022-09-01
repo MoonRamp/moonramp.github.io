@@ -24,13 +24,13 @@ const Default: Component = (props) => {
                 MoonRamp
               </Button>
             </Typography>
-            <Button color="inherit" href="https://moonramp.github.io/book">
+            <Button color="inherit" href="https://moonramp.github.io/book" target="_blank">
               Docs
             </Button>
-            <Button color="inherit" href="https://docs.rs/moonramp/latest">
+            <Button color="inherit" href="https://docs.rs/moonramp/latest" target="_blank">
               API
             </Button>
-            <IconButton color="inherit" href="https://github.com/MoonRamp/moonramp">
+            <IconButton color="inherit" href="https://github.com/MoonRamp/moonramp" target="_blank">
               <GitHubIcon />
             </IconButton>
           </Toolbar>
