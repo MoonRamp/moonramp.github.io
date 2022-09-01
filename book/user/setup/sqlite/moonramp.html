@@ -144,11 +144,11 @@
                     <main>
                         <h1 id="server-setup-sqlite"><a class="header" href="#server-setup-sqlite">Server Setup (Sqlite)</a></h1>
 <h2 id="create-the-master-merchant"><a class="header" href="#create-the-master-merchant">Create the Master Merchant</a></h2>
-<p>The following command will generate a new merchant entry with the provide metadata and return a json blob.</p>
+<p>The following command will generate a new merchant entry with the provided metadata and return a json blob.</p>
 <pre><code>docker run -v moonramp:/home/moonramp/db --entrypoint=moonramp-migration moonramp/moonramp:0.1.18 -u &quot;sqlite://db/moonramp.db&quot; create-merchant -n &quot;My Merchant&quot; -a &quot;An Address&quot; -e &quot;email@example.com&quot; -p &quot;12223334444&quot;
 </code></pre>
 <p>To run the next set of commands we need to come up with a secure <a href="../mkek.html">Master Key Encryption Key</a>. We recommend at least a 32 character random password. For our example we will use: <code>an example very very secret key.</code></p>
-<p>Using the <code>hash</code> from the <code>create-merchant</code> command replace <code>MERCHANT_HASH</code> and with your password replace <code>MKEK</code> in the following command to issue an API token for the master merchant. This API token has complete access to the merchant master account.</p>
+<p>Using the <code>hash</code> field from the <code>create-merchant</code> command replace <code>MERCHANT_HASH</code> and with your password replace <code>MKEK</code> in the following command to issue an API token for the master merchant. This API token has complete access to the merchant master account.</p>
 <pre><code>docker run -v moonramp:/home/moonramp/db --entrypoint=moonramp-migration moonramp/moonramp:0.1.18 -u &quot;sqlite://db/moonramp.db&quot; create-api-token -m MERCHANT_HASH -M MKEK
 </code></pre>
 <p>The api token record will be in the <code>token</code> field and the <code>Bearer Auth</code> string will be in the <code>api_credential</code> field of the json blob returned. The secret that is generated and encoded into the <code>api_credential</code> field is not stored in the database and if lost you will need to regenerate a new token.</p>
@@ -163,7 +163,7 @@
 4bd611af09c6   moonramp/moonramp:0.1.18     &quot;moonramp node -u sq…&quot;   2 minutes ago   Up 2 minutes                                                              moonramp
 633e8855d98d   moonramp/bitcoin:0.1.3-v23   &quot;bitcoind -regtest&quot;      2 minutes ago   Up 2 minutes   8332/tcp, 18332/tcp, 18443/tcp, 38332/tcp                  bitcoin
 </code></pre>
-<p>Congrats! You now have a MoonRamp server running using sqlite as a data store and connected to a bitcoin node in regtest mode.</p>
+<p>Congratulations! You now have a MoonRamp server running using sqlite as a data store and connected to a bitcoin node in regtest mode.</p>
 <p>Continue to the <a href="../moonrampctl.html">CLI Section</a></p>
 
                     </main>

@@ -146,14 +146,13 @@
                         <div align="center">
 <img src="https://github.com/MoonRamp/moonramp/raw/master/moonramp_icon.png" width="50%">
 </div>
-<p>This guide documents how to run your own MoonRamp server.</p>
-<p>MoonRamp is a self-hosted crypto payment gateway that features a REST and JsonRPC API. It features a programable <a href="https://webassembly.org">WASM</a> runtime that can be used to run custom programs to process sales. Bitcoin (BTC), Bitcoin Cash (BCH), Monero (XMR), Ethereum (ETH), and Ethereum Classic +ERC-20 Tokens are supported.</p>
+<p>This guide explains how to run your own MoonRamp server.</p>
+<p>MoonRamp is a self-hosted crypto payment gateway which features a REST and JsonRPC API. It features a programmable <a href="https://webassembly.org">WASM</a> runtime that can be used to run custom programs to process sales. Bitcoin (BTC), Bitcoin Cash (BCH), Monero (XMR), Ethereum (ETH), and Ethereum Classic +ERC-20 Tokens are supported.</p>
 <p>Moonramp is written in <a href="https://www.rust-lang.org">Rust</a> and is free and open source software.</p>
 <p><a href="https://moonramp.github.io/doc">Moonramp Rust Docs</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
 <p><a href="https://github.com/MoonRamp/moonramp/actions/workflows/release.yml"><img src="https://github.com/MoonRamp/moonramp/actions/workflows/release.yml/badge.svg" alt="Release CI" /></a> <a href="https://github.com/moonramp/moonramp/releases"><img src="https://img.shields.io/github/v/release/moonramp/moonramp?label=Github" alt="Github Release" /></a> <a href="https://hub.docker.com/r/moonramp/moonramp"><img src="https://img.shields.io/docker/v/moonramp/moonramp?label=DockerHub" alt="Docker Image" /></a></p>
-<p>Please choose one of the following install options.</p>
-<h2 id="install-methods"><a class="header" href="#install-methods">Install Methods</a></h2>
+<h2 id="choose-an-install-method"><a class="header" href="#choose-an-install-method">Choose an Install Method</a></h2>
 <ul>
 <li><a href="install/./install_bin.html">Binaries</a></li>
 <li><a href="install/./install_source.html">Compile from source</a></li>
@@ -166,7 +165,7 @@
 <p>The <code>ENTRYPOINT</code> of the image is set to the <code>moonramp</code> bin and the <code>CMD</code> must be overrided by the user.</p>
 <p>Docker images run as a non-priviledged user <code>moonramp</code> and group <code>moonramp</code> with <code>uid:gid</code> <code>1337:1337</code>.</p>
 <p>The following ports are defined via <code>EXPOSE</code> - <code>9370</code>, <code>9371</code>, and <code>9372</code>.</p>
-<p>No other libaries or bins are included in the image. If you wish to build an image that includes other tooling you can use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multi-stage</a> build to copy the MoonRamp bins. The docker image is very lean at around 35 MB.</p>
+<p>No other libraries or bins are included in the image. If you wish to build an image that includes other tooling you can use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multi-stage</a> build to copy the MoonRamp bins. The docker image is very lean at around 35 MB.</p>
 <p>For more information on docker see <a href="https://docs.docker.com/get-started/overview/">here</a>.</p>
 <h2 id="cli"><a class="header" href="#cli">CLI</a></h2>
 <pre><code>docker run moonramp/moonramp:0.1.18 help
@@ -176,12 +175,12 @@
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="binary"><a class="header" href="#binary">Binary</a></h1>
 <p><a href="https://github.com/moonramp/moonramp/releases"><img src="https://img.shields.io/github/v/release/moonramp/moonramp?label=Github" alt="Github Release" /></a></p>
-<p>Pre-compiled binaries are provided as <a href="https://github.com/moonramp/moonramp/releases">Github Releases</a></p>
+<p>Pre-compiled binaries are provided as <a href="https://github.com/moonramp/moonramp/releases">Github Releases</a>.</p>
 <p>Each release tag is signed and the download includes both bins and WASM programs.</p>
-<pre><code>curl https://github.com/MoonRamp/moonramp/releases/download/0.1.18/moonramp.tar.gz
+<pre><code>curl https://github.com/MoonRamp/moonramp/releases/latest/download/moonramp.tar.gz
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="source"><a class="header" href="#source">Source</a></h1>
-<p>To install from source</p>
+<p>To install from source:</p>
 <h2 id="step-1---rust"><a class="header" href="#step-1---rust">Step 1 - Rust</a></h2>
 <p><a href="https://www.rust-lang.org/tools/install">Install Rust</a></p>
 <pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -191,7 +190,7 @@
 <pre><code>git clone git@github.com:MoonRamp/moonramp.git
 </code></pre>
 <h3 id="2b---required-libaries"><a class="header" href="#2b---required-libaries">2b - Required libaries</a></h3>
-<p>Please install <code>sqlite-dev</code> and <code>mysql-dev</code> packages from your systems package manager. MoonRamp uses <a href="https://github.com/rustls/rustls">rust-tls</a> and as such openssl is not needed.</p>
+<p>Please install <code>sqlite-dev</code> and <code>mysql-dev</code> packages from your systems package manager. MoonRamp uses <a href="https://github.com/rustls/rustls">rust-tls</a> and as such <code>openssl-dev</code> is not needed.</p>
 <h2 id="step-3---build-bins"><a class="header" href="#step-3---build-bins">Step 3 - Build bins</a></h2>
 <pre><code>cd moonramp &amp;&amp; cargo build --release
 </code></pre>
@@ -199,7 +198,8 @@
 <pre><code>cargo --manifest-path=programs/default-sale/Cargo.toml build --release --target=wasm32-wasi
 </code></pre>
 <h3 id="notes"><a class="header" href="#notes">Notes</a></h3>
-<p>MacOS DOES NOT ship with a WASM supported version of clang. Please install clang via homebrew and set <code>CC</code> and <code>AR</code> env vars. For example</p>
+<p>MacOS DOES NOT ship with a WASM supported version of clang. Please install clang via homebrew and set <code>CC</code> and <code>AR</code> env vars.</p>
+<h4 id="example"><a class="header" href="#example">Example</a></h4>
 <pre><code>PATH=&quot;/usr/local/opt/llvm/bin:${PATH}&quot; CC=/usr/local/opt/llvm/bin/clang AR=/usr/local/opt/llvm/bin/llvm-ar cargo [COMMAND]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cratesio"><a class="header" href="#cratesio">Crates.io</a></h1>
@@ -228,9 +228,9 @@
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="master-key-encryption-key"><a class="header" href="#master-key-encryption-key">Master Key Encryption Key</a></h1>
 <p>MoonRamp uses a key encryption key scheme to uniquely encrypt all records independently of the underlying data store. The <code>Master Key Encryption Key</code> is a 256 bit key used to protect all data MoonRamp manages.</p>
-<p>When the program boots it will use the provided <code>Master Key Encryption Key</code> to create or decrypt the current <code>Key Encryption Key</code>.
-The <code>Master Key Encryption Key</code> will be purged from memory and the <code>Key Encryption Key</code> held in memory to decrypt <code>Encryption Key</code> records that are inturn used to decrypt specific record data.</p>
-<p>This means that all data is secured via the <code>Master Key Encryption Key</code>. As such if this key is lost <b>ALL DATA</b> will be lost! To repeat this any hot wallets managed by the system will be <b>UNRECOVERABLE</b> if the <code>Master Key Encryption Key</code> is lost.</p>
+<p>When the program boots, it will use the provided <code>Master Key Encryption Key</code> to create or decrypt the current <code>Key Encryption Key</code>.
+The <code>Master Key Encryption Key</code> will be purged from memory and the <code>Key Encryption Key</code> held in memory to decrypt <code>Encryption Key</code> records that are in turn used to decrypt specific record data.</p>
+<p>This means that all data is secured via the <code>Master Key Encryption Key</code>. As such, if this key is lost <b>ALL DATA</b> will be lost! To repeat this any hot wallets managed by the system will be <b>UNRECOVERABLE</b> if the <code>Master Key Encryption Key</code> is lost.</p>
 <p>MoonRamp uses <a href="https://github.com/RustCrypto">Rust Crypto</a>.</p>
 <h2 id="rotating-the-master-key-encryption-key"><a class="header" href="#rotating-the-master-key-encryption-key">Rotating the Master Key Encryption Key</a></h2>
 <p>TODO<sup class="footnote-reference"><a href="#mkek_rotation">1</a></sup></p>
@@ -240,13 +240,13 @@ The <code>Master Key Encryption Key</code> will be purged from memory and the <c
 <p>TODO<sup class="footnote-reference"><a href="#shamir">3</a></sup></p>
 <h2 id="encryption-stack"><a class="header" href="#encryption-stack">Encryption Stack</a></h2>
 <p>MoonRamp recommends a holistic approach to securing your data.</p>
-<p>For the most security Merchants should:</p>
+<p>For the highest level of security Merchants should:</p>
 <ul>
 <li>Maintain network firewall configurations to minimize network traffic to host running your data store and MoonRamp</li>
 <li>Run MoonRamp as a non-root user</li>
 <li>Run your data store on seperate hosts as a non-root user</li>
 <li>Enable full disk encryption for both your data store and MoonRamp hosts</li>
-<li>Enable transparent encryption for your data store</li>
+<li>Enable transparent encryption for your data store (Sqlcipher, pgcrypto, etc)</li>
 <li>Run all network traffic with TLS</li>
 <li>Utilize cold wallet support for high risk scenarios</li>
 </ul>
@@ -260,28 +260,28 @@ The <code>Master Key Encryption Key</code> will be purged from memory and the <c
 <p>MoonRamp will support Shamir secret sharing to constitute a <code>Master Key Encryption Key</code> from multiple key shares</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="master-merchant"><a class="header" href="#master-merchant">Master Merchant</a></h1>
-<p>MoonRamp is a multi-tenate system that supports any number of merchant accounts. Data and permissions are scoped to merchants. The general exception to this rule is the <code>Master Merchant</code> which has an elevated role in the system. The primary value the <code>Master Merchant</code> provides are setting the default programs and creating other merchants.</p>
+<p>MoonRamp is a multi-tennant system that supports any number of merchant accounts. Data and permissions are scoped to merchants. The general exception to this rule is the <code>Master Merchant</code> which has an elevated role in the system. The primary value the <code>Master Merchant</code> provides is setting the default programs and creating other merchants.</p>
 <p>The next sections of the guide will go through running MoonRamp with each of the support data stores.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sqlite"><a class="header" href="#sqlite">Sqlite</a></h1>
 <h2 id="run-a-bitcoin-node-in-regtest-mode"><a class="header" href="#run-a-bitcoin-node-in-regtest-mode">Run a bitcoin node in regtest mode</a></h2>
 <pre><code>docker run --rm --name bitcoin -d moonramp/bitcoin:0.1.3-v23 -regtest
 </code></pre>
 <h2 id="setup-the-sqlite-db-file"><a class="header" href="#setup-the-sqlite-db-file">Setup the Sqlite DB File</a></h2>
-<p>Create a docker volume and set the correct file permissions</p>
+<p>Create a docker volume and set the correct file permissions.</p>
 <pre><code>docker volume create moonramp
 </code></pre>
 <pre><code>docker run --rm -v moonramp:/db busybox /bin/sh -c 'touch /db/moonramp.db &amp;&amp; chown -R 1337:1337 /db'
 </code></pre>
-<p>Run the migrations to setup the db</p>
+<p>Run the migrations to setup the db.</p>
 <pre><code>docker run -v moonramp:/home/moonramp/db --entrypoint=moonramp-migration moonramp/moonramp:0.1.18 -u &quot;sqlite://db/moonramp.db&quot; migrate
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-setup-sqlite"><a class="header" href="#server-setup-sqlite">Server Setup (Sqlite)</a></h1>
 <h2 id="create-the-master-merchant"><a class="header" href="#create-the-master-merchant">Create the Master Merchant</a></h2>
-<p>The following command will generate a new merchant entry with the provide metadata and return a json blob.</p>
+<p>The following command will generate a new merchant entry with the provided metadata and return a json blob.</p>
 <pre><code>docker run -v moonramp:/home/moonramp/db --entrypoint=moonramp-migration moonramp/moonramp:0.1.18 -u &quot;sqlite://db/moonramp.db&quot; create-merchant -n &quot;My Merchant&quot; -a &quot;An Address&quot; -e &quot;email@example.com&quot; -p &quot;12223334444&quot;
 </code></pre>
 <p>To run the next set of commands we need to come up with a secure <a href="user/setup/sqlite/../mkek.html">Master Key Encryption Key</a>. We recommend at least a 32 character random password. For our example we will use: <code>an example very very secret key.</code></p>
-<p>Using the <code>hash</code> from the <code>create-merchant</code> command replace <code>MERCHANT_HASH</code> and with your password replace <code>MKEK</code> in the following command to issue an API token for the master merchant. This API token has complete access to the merchant master account.</p>
+<p>Using the <code>hash</code> field from the <code>create-merchant</code> command replace <code>MERCHANT_HASH</code> and with your password replace <code>MKEK</code> in the following command to issue an API token for the master merchant. This API token has complete access to the merchant master account.</p>
 <pre><code>docker run -v moonramp:/home/moonramp/db --entrypoint=moonramp-migration moonramp/moonramp:0.1.18 -u &quot;sqlite://db/moonramp.db&quot; create-api-token -m MERCHANT_HASH -M MKEK
 </code></pre>
 <p>The api token record will be in the <code>token</code> field and the <code>Bearer Auth</code> string will be in the <code>api_credential</code> field of the json blob returned. The secret that is generated and encoded into the <code>api_credential</code> field is not stored in the database and if lost you will need to regenerate a new token.</p>
@@ -296,7 +296,7 @@ The <code>Master Key Encryption Key</code> will be purged from memory and the <c
 4bd611af09c6   moonramp/moonramp:0.1.18     &quot;moonramp node -u sq…&quot;   2 minutes ago   Up 2 minutes                                                              moonramp
 633e8855d98d   moonramp/bitcoin:0.1.3-v23   &quot;bitcoind -regtest&quot;      2 minutes ago   Up 2 minutes   8332/tcp, 18332/tcp, 18443/tcp, 38332/tcp                  bitcoin
 </code></pre>
-<p>Congrats! You now have a MoonRamp server running using sqlite as a data store and connected to a bitcoin node in regtest mode.</p>
+<p>Congratulations! You now have a MoonRamp server running using sqlite as a data store and connected to a bitcoin node in regtest mode.</p>
 <p>Continue to the <a href="user/setup/sqlite/../moonrampctl.html">CLI Section</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="postgres"><a class="header" href="#postgres">Postgres</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="moonramp-setup-postgres"><a class="header" href="#moonramp-setup-postgres">MoonRamp Setup (Postgres)</a></h1>
@@ -336,7 +336,7 @@ The <code>Master Key Encryption Key</code> will be purged from memory and the <c
   }
 }
 </code></pre>
-<p>The program is processed and then stored encrypted in the datastore ready for invocation. We are now ready to start storing wallets and processing crypto payments. For more information about programs capabilites see the <a href="user/setup/../../programs.html">Programs</a> section of this guide.</p>
+<p>The program is processed then stored encrypted in the datastore ready for invocation. We are now ready to start storing wallets and processing crypto payments. For more information about programs capabilites see the <a href="user/setup/../../programs.html">Programs</a> section of this guide.</p>
 <p>To get more info from <code>moonrampctl</code> on programs run the following.</p>
 <pre><code>docker exec moonramp moonrampctl help program
 </code></pre>
@@ -401,16 +401,16 @@ The <code>Master Key Encryption Key</code> will be purged from memory and the <c
   }
 }
 </code></pre>
-<p>You have just created an invoice that expects payment of <code>0.25 Btc</code> to the wallet <code>BvY3SinZbHkbnG1azbR8NcxzX88kVyc8TDzNxYa9TKbB</code> at the address <code>bcrt1qhe8apwuv2dsr95yknu826qad3cdxvs323ygc80</code> within <code>15 minutes</code>.</p>
-<p>The fields <code>address</code> and <code>uri</code> are of particular note. <code>address</code> is a unique one-time address to receive payment. For Bitcoin each call to generate a new invoice will generate a new address for a given wallet. The <code>uri</code> field is data that can be handle by a mobile OS url handler (<a href="https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app">iOS</a>, <a href="https://developer.android.com/training/app-links/deep-linking">Android</a>). Most wallets support these type of uris when scanned as a QR code.</p>
+<p>You have just created an invoice that expects payment of <code>0.25 btc</code> to the wallet <code>BvY3SinZbHkbnG1azbR8NcxzX88kVyc8TDzNxYa9TKbB</code> at the address <code>bcrt1qhe8apwuv2dsr95yknu826qad3cdxvs323ygc80</code> within <code>15 minutes</code>.</p>
+<p>The fields <code>address</code> and <code>uri</code> are of particular note. <code>address</code> is a unique one-time address to receive payment. For Bitcoin, each call to generate a new invoice will generate a new address for a given wallet. The <code>uri</code> field is data that can be handled by a mobile OS url handler (<a href="https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app">iOS</a>, <a href="https://developer.android.com/training/app-links/deep-linking">Android</a>). Most wallets support these type of uris when scanned as a QR code.</p>
 <h2 id="details-about-moonramps-modeling"><a class="header" href="#details-about-moonramps-modeling">Details About MoonRamp's Modeling</a></h2>
 <p>MoonRamp models payments as four objects.</p>
 <p>An <code>Invoice</code>, <code>Sale</code>, <code>Refund</code>, and <code>Credit</code>.</p>
 <h3 id="invoice"><a class="header" href="#invoice">Invoice</a></h3>
 <p>An <code>Invoice</code> is a request to receive payment within a specific window of time for a specific amount to a specific address.</p>
-<p><i>Example: A merchant has a good or service they wish to collect payment on.</i></p>
+<p><i>Example: A merchant has a good or service they wish to collect payment for.</i></p>
 <h3 id="sale"><a class="header" href="#sale">Sale</a></h3>
-<p>A <code>Sale</code> is &quot;capture&quot; of an invoice that has been sucessfuly funded in full.</p>
+<p>A <code>Sale</code> is a &quot;capture&quot; of an invoice that has been successfully funded in full.</p>
 <p><i>Example: A customer has fully funded an invoice and expects a good or service in return.</i></p>
 <h3 id="refund"><a class="header" href="#refund">Refund</a></h3>
 <p>A <code>Refund</code> is a partial or full repayment of a specifc <code>Sale</code> to a specific address.</p>
@@ -418,6 +418,9 @@ The <code>Master Key Encryption Key</code> will be purged from memory and the <c
 <h3 id="credit"><a class="header" href="#credit">Credit</a></h3>
 <p>A <code>Credit</code> is a repayment for a specific <code>Invoice</code> that was only partially funded to a specific address.</p>
 <p><i>Example: A customer only partially funded an invoice and should have their funds sent back.</i></p>
+<h2 id="transfers"><a class="header" href="#transfers">Transfers</a></h2>
+<p>A <code>Refund</code> and <code>Credit</code> will make use of a <code>Transfer</code> which is a transaction from a specific wallet to a specific address. API tokens that have access to the wallet transfer API should be treated with extreme care.</p>
+<p><i>Example: A merchant wants to send funds from a hot wallet to an address.</i></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="programs"><a class="header" href="#programs">Programs</a></h1>
 
                     </main>

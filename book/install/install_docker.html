@@ -148,7 +148,7 @@
 <p>The <code>ENTRYPOINT</code> of the image is set to the <code>moonramp</code> bin and the <code>CMD</code> must be overrided by the user.</p>
 <p>Docker images run as a non-priviledged user <code>moonramp</code> and group <code>moonramp</code> with <code>uid:gid</code> <code>1337:1337</code>.</p>
 <p>The following ports are defined via <code>EXPOSE</code> - <code>9370</code>, <code>9371</code>, and <code>9372</code>.</p>
-<p>No other libaries or bins are included in the image. If you wish to build an image that includes other tooling you can use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multi-stage</a> build to copy the MoonRamp bins. The docker image is very lean at around 35 MB.</p>
+<p>No other libraries or bins are included in the image. If you wish to build an image that includes other tooling you can use a <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multi-stage</a> build to copy the MoonRamp bins. The docker image is very lean at around 35 MB.</p>
 <p>For more information on docker see <a href="https://docs.docker.com/get-started/overview/">here</a>.</p>
 <h2 id="cli"><a class="header" href="#cli">CLI</a></h2>
 <pre><code>docker run moonramp/moonramp:0.1.18 help

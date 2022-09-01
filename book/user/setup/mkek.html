@@ -144,9 +144,9 @@
                     <main>
                         <h1 id="master-key-encryption-key"><a class="header" href="#master-key-encryption-key">Master Key Encryption Key</a></h1>
 <p>MoonRamp uses a key encryption key scheme to uniquely encrypt all records independently of the underlying data store. The <code>Master Key Encryption Key</code> is a 256 bit key used to protect all data MoonRamp manages.</p>
-<p>When the program boots it will use the provided <code>Master Key Encryption Key</code> to create or decrypt the current <code>Key Encryption Key</code>.
-The <code>Master Key Encryption Key</code> will be purged from memory and the <code>Key Encryption Key</code> held in memory to decrypt <code>Encryption Key</code> records that are inturn used to decrypt specific record data.</p>
-<p>This means that all data is secured via the <code>Master Key Encryption Key</code>. As such if this key is lost <b>ALL DATA</b> will be lost! To repeat this any hot wallets managed by the system will be <b>UNRECOVERABLE</b> if the <code>Master Key Encryption Key</code> is lost.</p>
+<p>When the program boots, it will use the provided <code>Master Key Encryption Key</code> to create or decrypt the current <code>Key Encryption Key</code>.
+The <code>Master Key Encryption Key</code> will be purged from memory and the <code>Key Encryption Key</code> held in memory to decrypt <code>Encryption Key</code> records that are in turn used to decrypt specific record data.</p>
+<p>This means that all data is secured via the <code>Master Key Encryption Key</code>. As such, if this key is lost <b>ALL DATA</b> will be lost! To repeat this any hot wallets managed by the system will be <b>UNRECOVERABLE</b> if the <code>Master Key Encryption Key</code> is lost.</p>
 <p>MoonRamp uses <a href="https://github.com/RustCrypto">Rust Crypto</a>.</p>
 <h2 id="rotating-the-master-key-encryption-key"><a class="header" href="#rotating-the-master-key-encryption-key">Rotating the Master Key Encryption Key</a></h2>
 <p>TODO<sup class="footnote-reference"><a href="#mkek_rotation">1</a></sup></p>
@@ -156,13 +156,13 @@ The <code>Master Key Encryption Key</code> will be purged from memory and the <c
 <p>TODO<sup class="footnote-reference"><a href="#shamir">3</a></sup></p>
 <h2 id="encryption-stack"><a class="header" href="#encryption-stack">Encryption Stack</a></h2>
 <p>MoonRamp recommends a holistic approach to securing your data.</p>
-<p>For the most security Merchants should:</p>
+<p>For the highest level of security Merchants should:</p>
 <ul>
 <li>Maintain network firewall configurations to minimize network traffic to host running your data store and MoonRamp</li>
 <li>Run MoonRamp as a non-root user</li>
 <li>Run your data store on seperate hosts as a non-root user</li>
 <li>Enable full disk encryption for both your data store and MoonRamp hosts</li>
-<li>Enable transparent encryption for your data store</li>
+<li>Enable transparent encryption for your data store (Sqlcipher, pgcrypto, etc)</li>
 <li>Run all network traffic with TLS</li>
 <li>Utilize cold wallet support for high risk scenarios</li>
 </ul>

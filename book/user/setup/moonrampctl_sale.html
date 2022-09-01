@@ -168,16 +168,16 @@
   }
 }
 </code></pre>
-<p>You have just created an invoice that expects payment of <code>0.25 Btc</code> to the wallet <code>BvY3SinZbHkbnG1azbR8NcxzX88kVyc8TDzNxYa9TKbB</code> at the address <code>bcrt1qhe8apwuv2dsr95yknu826qad3cdxvs323ygc80</code> within <code>15 minutes</code>.</p>
-<p>The fields <code>address</code> and <code>uri</code> are of particular note. <code>address</code> is a unique one-time address to receive payment. For Bitcoin each call to generate a new invoice will generate a new address for a given wallet. The <code>uri</code> field is data that can be handle by a mobile OS url handler (<a href="https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app">iOS</a>, <a href="https://developer.android.com/training/app-links/deep-linking">Android</a>). Most wallets support these type of uris when scanned as a QR code.</p>
+<p>You have just created an invoice that expects payment of <code>0.25 btc</code> to the wallet <code>BvY3SinZbHkbnG1azbR8NcxzX88kVyc8TDzNxYa9TKbB</code> at the address <code>bcrt1qhe8apwuv2dsr95yknu826qad3cdxvs323ygc80</code> within <code>15 minutes</code>.</p>
+<p>The fields <code>address</code> and <code>uri</code> are of particular note. <code>address</code> is a unique one-time address to receive payment. For Bitcoin, each call to generate a new invoice will generate a new address for a given wallet. The <code>uri</code> field is data that can be handled by a mobile OS url handler (<a href="https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app">iOS</a>, <a href="https://developer.android.com/training/app-links/deep-linking">Android</a>). Most wallets support these type of uris when scanned as a QR code.</p>
 <h2 id="details-about-moonramps-modeling"><a class="header" href="#details-about-moonramps-modeling">Details About MoonRamp's Modeling</a></h2>
 <p>MoonRamp models payments as four objects.</p>
 <p>An <code>Invoice</code>, <code>Sale</code>, <code>Refund</code>, and <code>Credit</code>.</p>
 <h3 id="invoice"><a class="header" href="#invoice">Invoice</a></h3>
 <p>An <code>Invoice</code> is a request to receive payment within a specific window of time for a specific amount to a specific address.</p>
-<p><i>Example: A merchant has a good or service they wish to collect payment on.</i></p>
+<p><i>Example: A merchant has a good or service they wish to collect payment for.</i></p>
 <h3 id="sale"><a class="header" href="#sale">Sale</a></h3>
-<p>A <code>Sale</code> is &quot;capture&quot; of an invoice that has been sucessfuly funded in full.</p>
+<p>A <code>Sale</code> is a &quot;capture&quot; of an invoice that has been successfully funded in full.</p>
 <p><i>Example: A customer has fully funded an invoice and expects a good or service in return.</i></p>
 <h3 id="refund"><a class="header" href="#refund">Refund</a></h3>
 <p>A <code>Refund</code> is a partial or full repayment of a specifc <code>Sale</code> to a specific address.</p>
@@ -185,6 +185,9 @@
 <h3 id="credit"><a class="header" href="#credit">Credit</a></h3>
 <p>A <code>Credit</code> is a repayment for a specific <code>Invoice</code> that was only partially funded to a specific address.</p>
 <p><i>Example: A customer only partially funded an invoice and should have their funds sent back.</i></p>
+<h2 id="transfers"><a class="header" href="#transfers">Transfers</a></h2>
+<p>A <code>Refund</code> and <code>Credit</code> will make use of a <code>Transfer</code> which is a transaction from a specific wallet to a specific address. API tokens that have access to the wallet transfer API should be treated with extreme care.</p>
+<p><i>Example: A merchant wants to send funds from a hot wallet to an address.</i></p>
 
                     </main>
 
