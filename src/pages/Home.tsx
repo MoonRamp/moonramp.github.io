@@ -133,7 +133,7 @@ const Home: Component = () => {
                   Censorship resistant global payments
                 </Typography>
                 <Typography variant="h4" align="center">
-                  Financial freedom
+                  Financial Freedom
                 </Typography>
               </Stack>
             </Box>
@@ -167,7 +167,7 @@ const Home: Component = () => {
           <InfoCard
             icon={<IcecreamIcon fontSize="large" />}
             title="Cyberpunk"
-            info="Built by crypto maximalist for everyone. Giving financial independence back to the people"
+            info="Built by crypto maximalists for everyone. Giving financial independence back to the people"
           />
         </Grid>
 

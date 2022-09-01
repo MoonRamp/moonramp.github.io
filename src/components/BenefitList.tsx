@@ -34,7 +34,7 @@ const BenefitList: Component = () => {
               </ListItemIcon>
               <ListItemText
                 primary="No Chargebacks"
-                secondary="Once funds have been confirmed refunds are at your discretion"
+                secondary="Once funds have been confirmed, refunds are at your discretion"
               />
             </ListItem>
             <Divider variant="inset" component="li" />
@@ -52,7 +52,7 @@ const BenefitList: Component = () => {
               <ListItemIcon>
                 <CheckIcon fontSize="large" />
               </ListItemIcon>
-              <ListItemText primary="Soverign Wallets" secondary="Your keys your crypto" />
+              <ListItemText primary="Sovereign Wallets" secondary="Your keys, your crypto" />
             </ListItem>
             <Divider variant="inset" component="li" />
             <ListItem>
@@ -61,7 +61,7 @@ const BenefitList: Component = () => {
               </ListItemIcon>
               <ListItemText
                 primary="Free & Open Source Forever"
-                secondary="MIT licenced source code for everyone"
+                secondary="MIT licensed source code for everyone"
               />
             </ListItem>
           </List>

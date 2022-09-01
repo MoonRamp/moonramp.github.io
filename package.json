@@ -1,6 +1,6 @@
 {
   "name": "moonramp.github.io",
-  "version": "0.1.0",
+  "version": "0.2.3",
   "description": "",
   "scripts": {
     "start": "vite",
@@ -8,7 +8,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "lint.eslint": "eslint . --ext .tsx",
-    "lint.prettier": "prettier -c 'src/**/*.tsx'"
+    "lint.prettier": "prettier -c 'src/**/*.tsx' -w"
   },
   "license": "MIT",
   "devDependencies": {
